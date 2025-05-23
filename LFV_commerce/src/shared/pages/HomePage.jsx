@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 export const HomePage = () => {
     return (
@@ -10,3 +10,5 @@ export const HomePage = () => {
         </>
     )
 }
+
+export default HomePage;

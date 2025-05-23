@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const AboutPage = () => {
     return (
         <div className="about-container">
@@ -8,3 +10,5 @@ export const AboutPage = () => {
         </div>
     )
 }
+
+export default AboutPage;

@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.navbar_logo {
+    max-width: 20%;
+}
+

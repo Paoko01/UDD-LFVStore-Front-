@@ -1,7 +1,7 @@
 import { useReducer } from "react"
 import { authReducer } from "./authReducer"
 import { loginService, registerService } from "../services/authApiService";
-import { AuthContext } from "./AuthContext";
+import { AuthContext } from "./authContext";
 
 
 const initialState = {

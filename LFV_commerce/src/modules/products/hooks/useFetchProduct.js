@@ -10,19 +10,29 @@ export const useFetchProducts = () => {
     useEffect(() => {
       const getProducts = async () => {
         try {
-                setLoading(true);
+            setLoading(true);
                 setError(null);
 
-                const poleras = await fetchAllPoleras(); 
-                const prints = await fetchAllPrints();  
-                const allProducts = [...poleras, ...prints];
+                const poleras = await fetchAllPoleras();
+                const prints = await fetchAllPrints();
 
-                console.log(allProducts);
+                // ¡Nuevos console.log CLAVE aquí!
+                console.log("Valor de 'poleras':", poleras, "Es Array:", Array.isArray(poleras));
+                console.log("Valor de 'prints':", prints, "Es Array:", Array.isArray(prints));
+
+                // Aseguramos que son arrays antes de hacer spread.
+                // Esto NO DEBERÍA ser necesario si las APIs devuelven un array,
+                // pero lo ponemos para diagnóstico y robustez.
+                const safePoleras = Array.isArray(poleras) ? poleras : [];
+                const safePrints = Array.isArray(prints) ? prints : [];
+
+                const allProducts = [...safePoleras, ...safePrints];
+
+                console.log("allProducts después de spread:", allProducts);
                 setProductos(allProducts);
-                setError(null);
         } catch (err) {
           setError(err);
-          console.error(err);
+          console.error("Error en useFetchProducts:", err);
         } finally {
           setLoading(false);
         }

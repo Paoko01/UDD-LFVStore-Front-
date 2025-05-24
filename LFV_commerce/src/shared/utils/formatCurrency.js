@@ -20,7 +20,7 @@ export const formatCurrency = (
 ) => {
   return new Intl.NumberFormat(locale, {
     style: "currency",
-    currency,
+    currency: 'CLP',
     minimumFractionDigits,
     maximumFractionDigits,
   }).format(amount);

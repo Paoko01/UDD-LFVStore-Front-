@@ -10,7 +10,7 @@ export const registerRules = {
     },
     telefono: (value) => {
         if (!value) return "El telefono es requerido";
-        if (!/^\d{10}$/.test(value)) return "El telefono no es valido";
+        if (!/^\d{8}$/.test(value)) return "El telefono no es valido";
     },
     fecha_nacimiento: (value) => {
         if(!value) return "La fecha de nacimiento es requerida";
